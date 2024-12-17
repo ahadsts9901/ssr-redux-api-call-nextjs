@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: any = {
-    globalState: null
+    globalState: {}
 }
 
 export const stateSlice = createSlice({
@@ -9,7 +9,7 @@ export const stateSlice = createSlice({
     initialState,
     reducers: {
         setGlobalState: (state, action) => {
-            state.globalState = action?.payload
+            state.globalState = { ...state?.globalState, ...action?.payload }
         },
     }
 })
